@@ -29,4 +29,4 @@ make
 ```
 ### Prototype
 For code test purposes prototype was created. See image below.
-![prototype](.images/prototype.jpg "prototype")
+![prototype](./images/prototype.jpg "prototype")
