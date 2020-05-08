@@ -12,7 +12,7 @@
 #define RCLK	PB4	// output;
 #define OE_N	PB3	// output;
 
-#define BTN_MASK	(1 << BUTTON)
+#define BUTTON_MASK	(1 << BUTTON)
 #define SRCLK_MASK	(1 << SRCLK)
 #define SER_MASK	(1 << SER)
 #define SRCLR_N_MASK	(1 << SRCLR_N)
