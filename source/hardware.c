@@ -1,7 +1,6 @@
 #include "globals.h"
 #include "hardware.h"
 
-
 void initIO() {
 	DDRD  &= ~( BUTTON_MASK );
 	PORTD |= BUTTON_MASK;	// enable internal pull-up.
@@ -41,5 +40,33 @@ void initUART() {
 	#endif
 }
 
-void initJiffy();
+void initJiffy() {
+	// init TIMER0 in CTC mode, to generate 1ms frequency
+	// interrupt, assuming that F_CPU = 16 MHz
+	TCCR0A &= ~(1 << WGM00);
+	TCCR0A |=  (1 << WGM01);
+	TCCR0B &= ~(1 << WGM02);
+
+	#if F_CPU != 16000000UL
+		#warning system clock is not 16MHz. Jiffies != 1ms
+	#endif
+
+	#if ( (F_CPU / 1000) / 64 ) > 0x00ff
+		#define PRESCALER_MASK ( (1 << CS02) | (0 << CS01) | (0 << CS00) )
+		#define OCRA_VALUE ( (F_CPU / 1000) / 128 )
+	#else
+		#define PRESCALER_MASK ( (0 << CS02) | (1 << CS01) | (1 << CS00) )
+		#define OCRA_VALUE ( (F_CPU / 1000) / 64 )
+	#endif
+
+	// F_CPU prescaler
+	TCCR0B |= PRESCALER_MASK;
+	//
+	OCR0A = OCRA_VALUE;
+	// enable output compare A match interrupt
+	TIMSK |= (1 << OCIE0A);
+	// start counting ms at this point;
+	// actually when glob interrupt flag is set
+	jiffy = 0;   
+}
 
