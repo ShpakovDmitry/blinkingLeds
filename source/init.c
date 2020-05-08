@@ -5,5 +5,6 @@ void initController() {
 	initIO();
 	initUART();
 	initJiffy();
+	enableInterrupts();
 }
 
