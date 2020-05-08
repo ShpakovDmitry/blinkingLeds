@@ -1,4 +1,4 @@
-#include "gloabals.h"
+#include "globals.h"
 #include "hardware.h"
 
 
@@ -13,7 +13,7 @@ void initIO() {
 
 void initUART() {
 
-	UCSRB |= (1 << RX);
+	UCSRB |= (1 << RXEN);
 	#if UART_PARITY == NO
 		UCSRC &= ~( (1 << UPM1) | (1 << UPM0));
 	#elif UART_PARITY == ODD

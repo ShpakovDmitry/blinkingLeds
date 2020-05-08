@@ -17,7 +17,7 @@
 #define SER_MASK	(1 << SER)
 #define SRCLR_N_MASK	(1 << SRCLR_N)
 #define RCLK_MASK	(1 << RCLK)
-#define OE_N_MASK	(1 << EO_N)
+#define OE_N_MASK	(1 << OE_N)
 
 void initIO();
 void initUART();
