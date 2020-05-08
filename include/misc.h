@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 uint32_t getJiffies();
+void updateButtonState();
 
 
 #endif	// MISC_H

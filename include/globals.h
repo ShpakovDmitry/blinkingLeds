@@ -2,6 +2,7 @@
 #define GLOBALS_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 enum PARITY { NO, ODD, EVEN};
 #define UART_BAUD_RATE 57600
@@ -11,6 +12,9 @@ enum PARITY { NO, ODD, EVEN};
 #define UART_RX_BUFF_SIZE 10
 #define UART_TX_BUFF_SIZE 10
 
+#define DEBOUNCE_TIME 100
+
+bool lightRunningDirection;
 extern volatile uint32_t jiffy;
 
 #endif	// GLOBALS_H
