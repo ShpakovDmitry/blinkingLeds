@@ -1,4 +1,5 @@
 #include "init.h"
+#include "misc.h"
 
 
 void main() {
@@ -6,6 +7,6 @@ void main() {
 	initSoftware();
 
 	while (1) {
-		;
+		updateButtonState();
 	}
 }

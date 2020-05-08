@@ -2,6 +2,7 @@
 #define HARDWARE_H
 
 #include <avr/io.h>
+#include <stdbool.h>
 
 #define UART_TX PD0	// 
 #define UART_RX PD1	// 
@@ -26,5 +27,6 @@ void initUART();
 void initJiffy();
 void enableInterrupts();
 void disableInterrupts();
+bool pressedButton();
 
 #endif // HARDWARE_H

@@ -1,4 +1,5 @@
 #include <avr/interrupt.h>
+#include <stdbool.h>
 #include "globals.h"
 #include "hardware.h"
 
@@ -79,4 +80,13 @@ void enableInterrupts() {
 
 void disableInterrupts() {
 	cli();
+}
+
+bool pressedButton() {
+	if (PIND & BUTTON_MASK) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

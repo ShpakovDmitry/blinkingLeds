@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "globals.h"
 #include "misc.h"
+#include "hardware.h"
 
 uint32_t getJiffies() {
 	uint32_t tmp;
