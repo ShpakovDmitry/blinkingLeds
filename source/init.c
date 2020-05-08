@@ -1,5 +1,6 @@
 #include "init.h"
 #include "hardware.h"
+#include "uart.h"
 
 void initController() {
 	initIO();
@@ -8,3 +9,6 @@ void initController() {
 	enableInterrupts();
 }
 
+void initSoftware() {
+	initBuffUART();
+}

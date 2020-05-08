@@ -3,4 +3,9 @@
 
 void main() {
 	initController();
+	initSoftware();
+
+	while (1) {
+		;
+	}
 }
