@@ -12,6 +12,7 @@ void initIO() {
 }
 
 void initUART() {
+	// enable UART RX, TX, and interrupts on RX, TX complete
 	UCSRB |= (1 << RXEN) | (1 << TXEN) | (1 << RXCIE) | (1 << TXCIE);
 	#if UART_PARITY == NO
 		UCSRC &= ~( (1 << UPM1) | (1 << UPM0));
