@@ -1,6 +1,6 @@
 ### Description
 Program that runs on Atmel AVR architecture microcontroller.
-Makes running light on not less than nine leds.
+Makes running light on 18 leds.
 Light running direction is changed by button press.
 For debug UART is used.
 Also UART is used for running light speed adjustion.
