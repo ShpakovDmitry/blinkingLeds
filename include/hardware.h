@@ -19,6 +19,8 @@
 #define RCLK_MASK	(1 << RCLK)
 #define OE_N_MASK	(1 << OE_N)
 
+#define UART_BAUD_RATE_MAX (F_CPU/16)
+
 void initIO();
 void initUART();
 void initJiffy();
