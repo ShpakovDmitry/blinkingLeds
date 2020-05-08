@@ -1,3 +1,4 @@
+#include <avr/interrupt.h>
 #include "globals.h"
 #include "hardware.h"
 
@@ -70,3 +71,11 @@ void initJiffy() {
 	jiffy = 0;   
 }
 
+
+void enableInterrupts() {
+	sei();
+}
+
+void disableInterrupts() {
+	cli();
+}

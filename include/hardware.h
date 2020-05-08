@@ -24,5 +24,7 @@
 void initIO();
 void initUART();
 void initJiffy();
+void enableInterrupts();
+void disableInterrupts();
 
 #endif // HARDWARE_H
