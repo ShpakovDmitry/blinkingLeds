@@ -2,6 +2,5 @@
 #define INIT_H
 
 void initController();
-void initIO();
 
 #endif // INIT_H
