@@ -48,6 +48,21 @@ Data:         47 bytes (36.7% Full)
 (.data + .bss + .noinit)
 
 ```
+### Before Flashing
+Make sure that appropriate controller configuration
+bits (fuses) are set correct, before flashing the firmware.
+For current setup fuses are the following:
+```bash
+FUSE_EXTENDED_BYTE = 0xFF
+FUSE_HIGH_BYTE = 0xDF
+FUSE_LOW_BYTE = 0xFF
+LOCK_BIT_BYTE = 0xFF
+```
+
+### Flashing the controller
+For controller flashing `avrdude` is used.
+Please refer to `avrdude` [homepage](http://www.nongnu.org/avrdude/) for online
+documentation.
 
 ### Prototype
 For code test purposes prototype was created. See image below.
