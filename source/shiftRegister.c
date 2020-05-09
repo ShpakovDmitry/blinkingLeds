@@ -4,6 +4,13 @@
 
 #define SHIFT_WAIT 10
 
+void initShiftRegister() {
+	SET_SRCLR_N_LOW;
+	waitJiffies(SHIFT_WAIT);
+	SET_SRCLR_N_HIGH;
+	SET_OE_N_HIGH;
+}
+
 void sendShiftRegister(uint16_t data) {
 	int8_t i = 16;
 	

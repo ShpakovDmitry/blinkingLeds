@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+void initShiftRegister();
 void sendShiftRegister(uint16_t data);
 
 #endif	// SHIFT_REGISTER_H

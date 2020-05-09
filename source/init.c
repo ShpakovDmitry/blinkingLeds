@@ -1,6 +1,7 @@
 #include "init.h"
 #include "hardware.h"
 #include "uart.h"
+#include "shiftRegister.h"
 
 void initController() {
 	initIO();
@@ -11,4 +12,5 @@ void initController() {
 
 void initSoftware() {
 	initBuffUART();
+	initShiftRegister();
 }
