@@ -1,5 +1,6 @@
 #include "init.h"
 #include "misc.h"
+#include "leds.h"
 
 
 void main() {

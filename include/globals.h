@@ -14,7 +14,10 @@ enum PARITY { NO, ODD, EVEN};
 
 #define DEBOUNCE_TIME 100
 
-bool lightRunningDirection;
+#define LED_COUNT 16
+
+extern bool lightRunningDirection;
 extern volatile uint32_t jiffy;
+extern uint32_t ledsSpeed;
 
 #endif	// GLOBALS_H
