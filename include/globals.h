@@ -12,6 +12,7 @@ enum PARITY { NO, ODD, EVEN};
 #define UART_STOP_BITS 1
 #define UART_RX_BUFF_SIZE 10
 #define UART_TX_BUFF_SIZE 10
+#define CMD_FRAME_LENGTH 4
 
 #define DEBOUNCE_TIME 100
 

@@ -16,5 +16,6 @@ void dropDataRX(void);
 void dropDataTX(void);
 void putUART(uint8_t data);
 void getUART(uint8_t* data);
+void handleCommand();
 
 #endif	// UART_H

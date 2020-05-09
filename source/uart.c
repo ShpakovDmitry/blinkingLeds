@@ -41,6 +41,7 @@ void handleUART() {
 			dropDataTX();
 		}
 	}
+	handleCommand();
 }
 
 void dropDataRX(void) {
@@ -66,5 +67,19 @@ void getUART(uint8_t* data) {
 	}
 	else {
 		dropDataRX();
+	}
+}
+
+void handleCommand() {
+	if (sizeCircularBuff(cbufRX) == 4) {
+		uint8_t tmp;
+		getCircularBuff(cbufRX, &tmp);
+		ledsSpeed |= ( (uint32_t)tmp << 24);
+		getCircularBuff(cbufRX, &tmp);
+		ledsSpeed |= ( (uint32_t)tmp << 16);
+		getCircularBuff(cbufRX, &tmp);
+		ledsSpeed |= ( (uint32_t)tmp <<  8);
+		getCircularBuff(cbufRX, &tmp);
+		ledsSpeed |= ( (uint32_t)tmp <<  0);
 	}
 }
