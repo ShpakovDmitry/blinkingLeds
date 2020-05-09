@@ -1,9 +1,12 @@
 #include "shiftRegister.h"
+#include "hardware.h"
+#include "misc.h"
 
 #define SHIFT_WAIT 10
 
 void sendShiftRegister(uint16_t data) {
 	int8_t i = 16;
+	
 	SET_RCLK_LOW;
 
 	do {

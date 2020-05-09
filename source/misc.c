@@ -43,3 +43,11 @@ void updateButtonState(void) {
 	}
 }
 
+void waitJiffies(uint32_t val) {
+	uint32_t tmp;
+	tmp = getJiffies();
+
+	while (getJiffies() - tmp < val) {
+		;
+	}
+}

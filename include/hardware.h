@@ -29,4 +29,19 @@ void enableInterrupts();
 void disableInterrupts();
 bool pressedButton();
 
+#define SET_RCLK_LOW		( PORTB &= ~(RCLK_MASK) )
+#define SET_RCLK_HIGH		( PORTB |=  (RCLK_MASK) )
+
+#define SET_SRCLK_LOW		( PORTB &= ~(SRCLK_MASK) )
+#define SET_SRCLK_HIGH		( PORTB |=  (SRCLK_MASK) )
+
+#define SET_SER_LOW		( PORTB &= ~(SER_MASK) )
+#define SET_SER_HIGH		( PORTB |=  (SER_MASK) )
+
+#define SET_SRCLR_N_LOW		( PORTB &= ~(SRCLR_N_MASK) )
+#define SET_SRCLR_N_HIGH	( PORTB |=  (SRCLR_N_MASK) )
+
+#define SET_OE_N_LOW		( PORTB &= ~(OE_N_MASK) )
+#define SET_OE_N_HIGH		( PORTB |=  (OE_N_MASK) )
+
 #endif // HARDWARE_H

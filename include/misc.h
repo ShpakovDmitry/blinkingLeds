@@ -5,6 +5,7 @@
 
 uint32_t getJiffies();
 void updateButtonState();
+void waitJiffies(uint32_t val);
 
 
 #endif	// MISC_H
