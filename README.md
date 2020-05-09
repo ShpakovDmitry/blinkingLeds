@@ -1,5 +1,5 @@
 ### Description
-Program that runs on Atmel AVR architecture microcontroller.
+Program that runs on Atmel AVR architecture [ATtiny2313](https://www.microchip.com/wwwproducts/en/ATTINY2313) microcontroller.
 Makes running light on 18 leds.
 Light running direction is changed by button press.
 For debug UART is used.
