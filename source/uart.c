@@ -27,7 +27,7 @@ void handleUART() {
 			flagsUART.buffOvfRX = false;
 		}
 		else {
-			flagsUART.buffOvfRX = true;
+			dropDataRX();
 		}
 	}
 	
@@ -38,8 +38,33 @@ void handleUART() {
 			flagsUART.buffOvfTX = false;
 		}
 		else {
-			flagsUART.buffOvfTX = true;
+			dropDataTX();
 		}
 	}
+}
 
+void dropDataRX(void) {
+	flagsUART.buffOvfRX = true;
+}
+
+void dropDataTX(void) {
+	flagsUART.buffOvfTX = true;
+}
+
+void putUART(uint8_t data) {
+	if ( put2CircularBuff(cbufTX, data) == 0 ) {
+		flagsUART.buffOvfTX = false;
+	}
+	else {
+		dropDataTX();
+	}
+}
+
+void getUART(uint8_t* data) {
+	if ( getCircularBuff(cbufRX, data) == 0 ) {
+		flagsUART.buffOvfRX = false;
+	}
+	else {
+		dropDataRX();
+	}
 }

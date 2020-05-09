@@ -12,5 +12,9 @@ typedef struct {
 
 void initBuffUART();
 void handleUART();
+void dropDataRX(void);
+void dropDataTX(void);
+void putUART(uint8_t data);
+void getUART(uint8_t* data);
 
 #endif	// UART_H
