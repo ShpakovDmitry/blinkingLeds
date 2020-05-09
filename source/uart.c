@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <avr/eeprom.h>
 #include "globals.h"
 #include "circularBuffer.h"
 #include "uart.h"
@@ -82,4 +83,6 @@ void handleCommand() {
 		getCircularBuff(cbufRX, &tmp);
 		ledsSpeed |= ( (uint32_t)tmp <<  0);
 	}
+	eeprom_busy_wait();
+	eeprom_write_dword(ledsSpeedEEPROM, ledsSpeed);
 }

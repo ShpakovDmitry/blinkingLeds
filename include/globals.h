@@ -22,5 +22,6 @@ extern FlagsUART flagsUART;
 extern bool lightRunningDirection;
 extern volatile uint32_t jiffy;
 extern uint32_t ledsSpeed;
+extern uint32_t* ledsSpeedEEPROM;
 
 #endif	// GLOBALS_H
