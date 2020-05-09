@@ -27,6 +27,28 @@ To build project run the following command:
 ```bash
 make
 ```
+
+### Firmware size
+To check whether firmware fits to controller flash memory and there is
+not SRAM over usage, run the following command:
+```bash
+make
+avr-size ./build/blinkingLeds.o --mcu=attiny2313 --format=avr
+```
+The output will be something familiar:
+```bash
+AVR Memory Usage
+----------------
+Device: attiny2313
+
+Program:    2508 bytes (122.5% Full)
+(.text + .data + .bootloader)
+
+Data:         47 bytes (36.7% Full)
+(.data + .bss + .noinit)
+
+```
+
 ### Prototype
 For code test purposes prototype was created. See image below.
 ![prototype](./images/prototype.jpg "prototype")
