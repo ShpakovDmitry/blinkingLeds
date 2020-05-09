@@ -8,5 +8,6 @@ void main() {
 
 	while (1) {
 		updateButtonState();
+		updateLeds();
 	}
 }
