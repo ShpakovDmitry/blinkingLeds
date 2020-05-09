@@ -90,3 +90,10 @@ bool pressedButton() {
 		return false;
 	}
 }
+
+uint8_t getRxRegUART() {
+	return UDR;
+}
+void setTxRegUART(uint8_t data) {
+	UDR = data;
+}

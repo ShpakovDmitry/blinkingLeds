@@ -5,7 +5,7 @@
 #include "misc.h"
 
 bool lightRunningDirection;
-uint32_t ledsSpeed;
+uint32_t ledsSpeed = 1000;
 uint16_t ledsState;
 
 void initLeds() {

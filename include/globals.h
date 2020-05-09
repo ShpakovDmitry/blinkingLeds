@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "uart.h"
 
 enum PARITY { NO, ODD, EVEN};
 #define UART_BAUD_RATE 57600
@@ -16,6 +17,7 @@ enum PARITY { NO, ODD, EVEN};
 
 #define LED_COUNT 16
 
+extern FlagsUART flagsUART;
 extern bool lightRunningDirection;
 extern volatile uint32_t jiffy;
 extern uint32_t ledsSpeed;

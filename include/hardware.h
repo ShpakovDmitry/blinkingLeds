@@ -28,6 +28,8 @@ void initJiffy();
 void enableInterrupts();
 void disableInterrupts();
 bool pressedButton();
+uint8_t getRxRegUART();
+void setTxRegUART(uint8_t data);
 
 #define SET_RCLK_LOW		( PORTB &= ~(RCLK_MASK) )
 #define SET_RCLK_HIGH		( PORTB |=  (RCLK_MASK) )

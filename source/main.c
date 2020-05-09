@@ -1,6 +1,7 @@
 #include "init.h"
 #include "misc.h"
 #include "leds.h"
+#include "uart.h"
 
 
 void main() {
@@ -10,5 +11,6 @@ void main() {
 	while (1) {
 		updateButtonState();
 		updateLeds();
+		handleUART();
 	}
 }
